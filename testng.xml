@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <!-- <suite name="TestSuite" thread-count="2" parallel="tests" >
@@ -22,16 +21,47 @@
 
 -->
 
-<suite name="Suite" >
+<!-- <suite name="Group Suite Demo" verbose="1">
 
-	<test name="GroupingDemo">
+	<test name="Group Demo">
 		<groups>
 			<run>
 				<include name = "Car"/>
+				<exclude name="scoot"></exclude>
 			</run>
 		</groups>
 		<classes>
-			<class name="basic.testng.Grouping"> </class>
+			<class name="basic.testng.Grouping" />
 		</classes>
 	</test>
-</suite>
+</suite> -->
+
+
+
+<!-- <suite name="Group Suite Demo" verbose="1">
+
+	<test name="Group Demo">
+		<groups>
+			<define name = "All">
+				<include name = "Car"/>
+				<include name = "scoot"/>
+			</define>
+			<run>
+				<include name = "All"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="basic.testng.Grouping" />
+		</classes>
+	</test>
+</suite> -->
+
+<suite name="Suite">
+	<parameter name="sUserName" value="utsavr"></parameter>
+	<parameter name="sPassword" value="utsav123"></parameter>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="parameterization.TestNGParams"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

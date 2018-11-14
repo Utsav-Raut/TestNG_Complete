@@ -1,0 +1,42 @@
+The Asserts helps us verify the terms of the conditions and decide whether the test has failed or passed.
+Without throwing any exception, a test is considered to be only successful.
+Assertions is the best way to perform any kind of validations in the tests.
+When a assertion fails, the test script prevents execution, unless it is made in some form.
+
+There are two types of asserts in Selenium:
+	Soft Assert
+	Hard Assert
+	
+=================================================================================================================
+
+Hard assertion:
+
+A Hard Assertion is a type of assertion that instantly throws an exception when a assert statement fails and continues with the next test in the test suite.
+To achieve this, we need to handle the Assertion error which is thrown with a catch block like the Java block.
+After the suit is completed, after completion of the execution, particular test has been marked as passed instead of FAIL.
+
+Different Hard Assert Statements:
+	Assert.assertEquals(actual,expected);
+	Assert.assertNotEquals(actual,expected,Message);
+	Assert.assertTrue(condition);
+	Assert.assertFalse(condition);
+	Assert.assertNull(object);
+	Assert.assertNotNull(object);
+
+================================================================================================================
+
+Soft assertion:
+
+To deal with the disadvantage of Hard Assertions, a custom error handler provided by TestNG is called soft Assertion.
+Soft Assertions is definitely the assertions type that does not throw an exception when a assertion fails and continues in the next phase after the assert statement.
+This is usually used when our test requires many assertions to execute and the user wants to execute all the assertions / code before failing / skipping the tests.
+ 
+
+Different Soft Assert Statements:
+
+	softAssert.assertTrue(false);
+	softAssert.assertEquals(1, 2);
+	softAssert.assertAll();
+
+If you forget to call assertAll() at the end of your test, the test will pass even if any assert objects threw exceptions.
+So don’t forget to add assertAll()

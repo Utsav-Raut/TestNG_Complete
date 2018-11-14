@@ -3,6 +3,7 @@ package basics.testng;
 import org.testng.annotations.Test;
 
 public class Grouping {
+	
   @Test(groups = { "Car" })
   public void car1() {
 	  System.out.println("Batch car - Test Car 1");
@@ -13,14 +14,14 @@ public class Grouping {
 	  System.out.println("Batch car - Test Car 2");
   }
   
-  @Test(groups = { "Scooter" })
+  @Test(groups = { "scoot" })
   public void scooter1() {
 	  System.out.println("Batch scooter - Test scooter 1");
   }
   
-  @Test(groups = { "Scooter" })
-  public void scooter2() {
-	  System.out.println("Batch scooter - Test scooter 1");
+  @Test(groups = { "scoot" })
+  public void scoot2() {
+	  System.out.println("Batch scooter - Test scooter 2");
   }
   
   @Test(groups = { "Car", "Sedan Car" })
